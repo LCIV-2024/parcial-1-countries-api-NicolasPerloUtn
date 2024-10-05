@@ -1,0 +1,7 @@
+services:
+  contenedor-api-elecciones:
+    container_name: contenedor-api
+    image: contenedor-api:1.0.0
+    build: .
+    ports:
+      - 8080:8080
