@@ -1,5 +1,6 @@
 package ar.edu.utn.frc.tup.lciii.controllers;
 
+import ar.edu.utn.frc.tup.lciii.dtos.common.CountryDTO;
 import ar.edu.utn.frc.tup.lciii.service.CountryServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -28,6 +29,12 @@ class CountryControllerTest {
 
     @Test
     public void controllerTest() throws Exception {
+
+        CountryDTO country1 = new CountryDTO("Argentina", "ARG");
+        CountryDTO country2 = new CountryDTO("Chile", "CHL");
+        List<CountryDTO> countries = Arrays.asList(country1, country2);
+
+        when(countryService.getCountries(null, null)).thenReturn(countries);
 
         MockHttpServletResponse response = this.mockMvc.perform(get("/api/countries").accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
