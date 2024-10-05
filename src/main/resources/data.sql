@@ -1,0 +1,1 @@
+INSERT INTO Countries (code, name, population, area) VALUES ('ARG', 'Argentina', 1L, 1)
